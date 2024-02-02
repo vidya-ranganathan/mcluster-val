@@ -21,12 +21,4 @@ spec:
       - image: vidyablr/mcluster-valcontroller:0.1.0
         name: mcluster-valcontroller
         resources: {}
-        volumeMounts:
-          - name: serving-cert
-            mountPath: /var/run/webhook/serving-cert
-
-      volumes:
-        -name: serving-cert
-         secret:
-           secretName: certs
 status: {}
