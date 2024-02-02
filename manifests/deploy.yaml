@@ -29,7 +29,7 @@ spec:
           - name: serving-cert
             mountPath: /var/run/webhook/serving-cert
       volumes:
-        -name: serving-cert
-         secret:
-           secretName: certs
+        - name: serving-cert
+          secret:
+            secretName: certs
 status: {}
