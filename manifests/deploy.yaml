@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vcontroller
+  name: vcontroller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vcontroller
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vcontroller
+    spec:
+      containers:
+      - image: vidyablr/mcluster-valcontroller:0.1.0
+        name: mcluster-valcontroller
+        resources: {}
+status: {}
