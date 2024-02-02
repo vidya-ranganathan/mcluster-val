@@ -24,4 +24,15 @@ kubectl create secret generic certs --from-file tls.crt --from-file tls.key --dr
 Mount the secret on the deploy.yaml
 
 Deploy:
+kubectl create -f manifests/certs/secret.yaml
 kubectl create -f manifests/deploy.yaml
+
+Create a service:
+kubectl expose deployment vcontroller --port 443 --dry-run=client -oyaml > manifests/service.yaml
+
+Target port: 
+8443
+
+Check the pods:
+kubectl get pods
+kubectl describe pod <podname>
