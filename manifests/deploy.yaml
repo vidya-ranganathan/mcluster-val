@@ -20,11 +20,14 @@ spec:
       containers:
       - image: vidyablr/mcluster-valcontroller:0.1.0
         name: mcluster-valcontroller
+        args:
+        - --tls-cert-file=/var/run/webhook/serving-cert/tls.crt
+        - --tls-private-key-file=/var/run/webhook/serving-cert/tls.key
+        - --v=4
         resources: {}
         volumeMounts:
           - name: serving-cert
             mountPath: /var/run/webhook/serving-cert
-
       volumes:
         -name: serving-cert
          secret:
